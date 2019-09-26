@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{% block title %}{%{% endblock title%}</title>
+</head>
+<body>
+  {% block body %}
+  {% endblock body %}
+</body>
+</html>
+
+{% comment %} # myform 은 프로젝트, 프로젝트 폴더 안의 templates 는 장고가 인식 못함 {% endcomment %}
+{% comment %} # settings.py templates 에 DIR 에 os.path.join(BASE_DIR, 'myform', 'templates') 입력 {% endcomment %}
