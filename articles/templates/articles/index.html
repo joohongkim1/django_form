@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Articles{% endblock title %}  
+
+{% block body %}
+<h1>Articles</h1>
+<a href="{% url 'articles:create' %}">[New]</a>  {% comment %} '#' 은 아무데도 가지 않는다는 뜻 {% endcomment %}
+<hr>
+{% for article in articles %}
+<div>
+  <h3>{{ article.pk }}. {{ article.title }}</h3>
+  <p>{{ article.created_at }}</p>
+  <a href="{% url 'articles:detail' article.pk %}">[Detail]</a>  {% comment %}디테일 페이지로 이동하는 url 에는 primary key가 url에 있어야 한다.{% endcomment %}
+</div>
+<br>
+{% empty %}  {% comment %} 비었을 경우 {% endcomment %}
+<p>아직 게시글이 없습니다.</p>
+{% endfor %}
+{% endblock body %} 
